@@ -1,197 +1,264 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Than Soe Naing</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #f1f5f9;
-      display: flex;
-      justify-content: center;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+/* TOP SECTION */
+.hero {
+    background: linear-gradient(to bottom, #0f172a, #111827);
+    color: white;
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56,189,248,0.5);
+}
+
+.hero h1 {
+    margin-top: 18px;
+    font-size: 34px;
+    color: #38bdf8;
+}
+
+.role {
+    margin-top: 8px;
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+/* SOCIAL */
+.social {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.social a {
+    width: 220px;
+    padding: 14px;
+    text-decoration: none;
+    color: #38bdf8;
+    border: 1px solid #38bdf8;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.social a:hover {
+    background: #38bdf8;
+    color: #111827;
+    box-shadow: 0 0 15px rgba(56,189,248,0.4);
+}
+
+/* MAIN CONTENT */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 40px 25px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0ea5e9;
+    margin-bottom: 15px;
+    border-left: 4px solid #0ea5e9;
+    padding-left: 10px;
+}
+
+.bio {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #374151;
+}
+
+/* BOOK SECTION */
+.book-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+}
+
+.book-card img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.book-card h3 {
+    color: #0284c7;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.book-card p {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #0ea5e9;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #0284c7;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.location {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.email {
+    font-size: 15px;
+    color: #6b7280;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 28px;
     }
 
     .container {
-      max-width: 520px;
-      width: 100%;
+        padding: 30px 18px;
     }
 
-    /* TOP */
-    .top {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 50px 20px 30px;
+    .book-card h3 {
+        font-size: 20px;
     }
-
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #38bdf8;
-      box-shadow: 0 0 15px #38bdf8;
-    }
-
-    h1 {
-      margin: 10px 0 5px;
-      color: #38bdf8;
-    }
-
-    .role {
-      color: #cbd5e1;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    /* SOCIAL */
-    .social a {
-      display: block;
-      margin: 10px auto;
-      padding: 12px;
-      width: 180px;
-      background: transparent;
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .social a:hover {
-      background: #38bdf8;
-      color: black;
-      box-shadow: 0 0 15px #38bdf8;
-    }
-
-    /* BOTTOM */
-    .bottom {
-      background: white;
-      padding: 25px;
-      color: #333;
-    }
-
-    .section-title {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #0ea5e9;
-      border-left: 4px solid #0ea5e9;
-      padding-left: 8px;
-      margin-top: 20px;
-    }
-
-    .bio {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    /* BOOK */
-    .book {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .book h3 {
-      margin: 0;
-      color: #0ea5e9;
-    }
-
-    .book p {
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    .book a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      background: #0ea5e9;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-    }
-
-    /* FOOTER */
-    .footer {
-      margin-top: 25px;
-      text-align: center;
-      font-size: 14px;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    /* BIG LOCATION TEXT */
-    .location {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-  </style>
+}
+</style>
 </head>
-
 <body>
 
-<div class="container">
+<!-- TOP -->
+<section class="hero">
 
-  <!-- TOP -->
-  <div class="top">
+    <!-- profile image -->
+    <img src="phot1.jpg" alt="Profile Photo" class="profile-img">
 
-    <img class="profile-img" src="phot1.jpg" alt="profile">
-
+    <!-- name -->
     <h1>Than Soe Naing</h1>
 
+    <!-- role -->
     <div class="role">
-      Python & Author
+        Python & Author
     </div>
 
-    <!-- SOCIAL -->
+    <!-- social -->
     <div class="social">
-      <a href="https://www.facebook.com/share/1Ex6E1T45n/" target="_blank">Facebook</a>
-      <a href="https://github.com/thansoenaingg" target="_blank">GitHub</a>
-      <a href="https://t.me/thansoenaingg" target="_blank">Telegram</a>
+
+        <a href="https://www.facebook.com/share/1Ex6E1T45n/" target="_blank">
+            Facebook
+        </a>
+
+        <a href="https://github.com/thansoenaingg" target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://t.me/thansoenaingg" target="_blank">
+            Telegram
+        </a>
+
     </div>
 
-  </div>
+</section>
 
-  <!-- BOTTOM -->
-  <div class="bottom">
+<!-- MAIN -->
+<div class="container">
 
-    <div class="section-title">About Me</div>
+    <!-- About -->
+    <div class="section-title">
+        About Me
+    </div>
 
     <div class="bio">
-      A beginner developer learning coding, building projects, and growing every day.
+        A beginner developer learning coding, building projects, and growing every day.
     </div>
 
-    <div class="section-title">Recommended Books</div>
-
-    <div class="book">
-      <img src="2.jpg" style="width:100%;border-radius:8px;">
-      <h3>A Kyi Taw</h3>
-      <p>It’s a very good book. You should try reading it.</p>
-      <a href="phot.pdf" download>Download</a>
+    <!-- Books -->
+    <div class="section-title">
+        Recommended Books
     </div>
 
-    <!-- FOOTER -->
+    <div class="book-card">
+
+        <!-- book image -->
+        <img src="2.jpg" alt="Book Cover">
+
+        <!-- book title -->
+        <h3>A Kyi Taw </h3>
+
+        <!-- book description -->
+        <p>
+            This is a very good book. You should try reading it.
+        </p>
+
+        <!-- book pdf -->
+        <a href="phot.pdf" download class="download-btn">
+            Download Book
+        </a>
+
+    </div>
+
+    <!-- Footer -->
     <div class="footer">
 
-      <div class="location">
-        Live in Ye U, Sagaing, Myanmar
-      </div>
+        <div class="location">
+            Live in Ye U, Sagaing, Myanmar
+        </div>
 
-      <br>
-
-      📧 thansoenaing9999@gmail.com
+        <div class="email">
+            📧 thansoenaing9999@gmail.com
+        </div>
 
     </div>
-
-  </div>
 
 </div>
 
